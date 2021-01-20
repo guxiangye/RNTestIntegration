@@ -69,31 +69,43 @@ RCT_EXPORT_METHOD(addHelloWord:(NSString *)name location:(NSString *)location)
 }
 
 - (void)setupRNView {
-    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];
+    
     
     // 热更新
-//    RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:nil];
-//    RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-//                                                     moduleName:@"RNTestDemo"
-//                                              initialProperties:nil];
+    RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:nil];
+    RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
+                                                     moduleName:@"RNTestDemo"
+                                              initialProperties:@{
+                                                  @"params" : @[
+                                                    @{
+                                                      @"name" : @"Neil",
+                                                      @"value": @"28"
+                                                     },
+                                                    @{
+                                                      @"name" : @"Colin",
+                                                      @"value": @"55"
+                                                    }
+                                                  ]
+                                                }];
     
-    RCTRootView *rootView =
-          [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
-                                      moduleName: @"RNTestDemo"
-                               initialProperties:
-                                 @{
-                                   @"scores" : @[
-                                     @{
-                                       @"name" : @"Alex",
-                                       @"value": @"42"
-                                      },
-                                     @{
-                                       @"name" : @"Joel",
-                                       @"value": @"10"
-                                     }
-                                   ]
-                                 }
-                                   launchOptions: nil];
+//    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];
+//    RCTRootView *rootView =
+//          [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
+//                                      moduleName: @"RNTestDemo"
+//                               initialProperties:
+//                                 @{
+//                                   @"scores" : @[
+//                                     @{
+//                                       @"name" : @"Alex",
+//                                       @"value": @"42"
+//                                      },
+//                                     @{
+//                                       @"name" : @"Joel",
+//                                       @"value": @"10"
+//                                     }
+//                                   ]
+//                                 }
+//                                   launchOptions: nil];
     rootView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     [self.view addSubview:rootView];
     

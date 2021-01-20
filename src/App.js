@@ -11,22 +11,24 @@ import AppNavigator from "./router/router"
 import {
 	StyleSheet, StatusBar, AppState
 } from "react-native"
-// import codePush from "react-native-code-push";
+import codePush from "react-native-code-push";
 
-// @codePush
+@codePush
 class App extends React.Component {
 	constructor(props) {
 		super(props)
 
-		console.log(this.props.scores)
-		alert(JSON.stringify(this.props.scores))
+		console.log(this.props.params)
+		alert(JSON.stringify(this.props.params))
 	}
 
 	componentDidMount() {
-		// 如果你期望更及时的获得更新，可以在每次APP从后台进入前台的时候去主动的检查更新，执行如下代码：
-		// AppState.addEventListener("change", (newState) => {
-		// 	newState === "active" && codePush.sync();
-		// });
+		// 静默更新
+		// codePush.sync();
+		// 如果期望更及时的获得更新，可以在每次APP从后台进入前台的时候去主动的检查更新，执行如下代码：
+		AppState.addEventListener("change", (newState) => {
+			newState === "active" && codePush.sync();
+		});
 	}
 
 	render() {
