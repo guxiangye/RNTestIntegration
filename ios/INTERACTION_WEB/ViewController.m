@@ -26,7 +26,6 @@
     frame.size.height = [UIScreen mainScreen].bounds.size.height - 88 - 34;
     self.webView.frame = frame;
     
-    //https://uat.syh-activity.com/hfbank_h5/#/activity?token=eyJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1OTU5MTk5NjYsInN1YiI6ImM0NmZiNWE5ZDEyMzQ1Y2M4ZTBiOGJiNjg4ZjlkZjkyIiwiaXNzIjoiaHNiYy5jb20iLCJib2R5Q2xhaW0iOnsiaW1hZ2VVcmwiOiJodHRwOi8vYmFpZHUuY29tIiwibmlja05hbWUiOiJ0ZXN0IG5pY2sgbmFtZSJ9fQ.T-Sr4KgoEGhGbFxJ9iIfP3LOkDcNLQbtod4VR260qguJsXEiv8QwL2U7B3VK5bPf8ja0ppRVJ3ovh8BBjSEcpw
     //https://mobile.ant.design/kitchen-sink/?lang=zh-CN
     [self ns_wk_loadURLString:@"https://mobile.ant.design/kitchen-sink/?lang=zh-CN"];
     
