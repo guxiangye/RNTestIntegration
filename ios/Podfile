@@ -8,7 +8,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 # plugin 'cocoapods-binary'
- use_frameworks!
+# use_frameworks!
 
 def shared_pods
     pod 'NSWebKit', '1.0.1'
@@ -47,6 +47,9 @@ def shared_pods
     pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
     pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
     pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+    
+    pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+    pod 'CodePush', :path => '../node_modules/react-native-code-push'
 end
 
 target 'INTERACTION_WEB' do
@@ -55,8 +58,5 @@ target 'INTERACTION_WEB' do
     use_react_native!(:path => config["reactNativePath"])
     
     shared_pods
-  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
-
-  pod 'CodePush', :path => '../node_modules/react-native-code-push'
 
 end

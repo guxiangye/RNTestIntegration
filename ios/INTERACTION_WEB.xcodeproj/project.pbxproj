@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22E3D270DA15B169047EB412 /* libPods-INTERACTION_WEB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF033D1D0B56A24F0364FFF /* libPods-INTERACTION_WEB.a */; };
 		2F0699B0253EBA8400272F14 /* IWConstantManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0699AF253EBA8400272F14 /* IWConstantManager.m */; };
 		2F892FB02536C71D00DC8217 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F892FAF2536C71D00DC8217 /* AppDelegate.m */; };
 		2F892FB62536C71D00DC8217 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F892FB52536C71D00DC8217 /* ViewController.m */; };
@@ -24,7 +25,6 @@
 		2F8E348325B5DC3E001BA4CB /* TestDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8E348225B5DC3E001BA4CB /* TestDemoView.m */; };
 		2F8E348C25B5DC85001BA4CB /* TestDemoViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8E348B25B5DC85001BA4CB /* TestDemoViewManager.m */; };
 		2F8E355A25B7C437001BA4CB /* TestDemoEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8E355925B7C437001BA4CB /* TestDemoEmitter.m */; };
-		F96C53C720C903C90E40FCF1 /* Pods_INTERACTION_WEB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEDB63A624C1C1FE9CB475A /* Pods_INTERACTION_WEB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,9 +80,9 @@
 		2F8E355825B7C437001BA4CB /* TestDemoEmitter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDemoEmitter.h; sourceTree = "<group>"; };
 		2F8E355925B7C437001BA4CB /* TestDemoEmitter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDemoEmitter.m; sourceTree = "<group>"; };
 		2FBA9FF32536FED90069ED24 /* IWPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWPrefixHeader.pch; sourceTree = "<group>"; };
+		5DF033D1D0B56A24F0364FFF /* libPods-INTERACTION_WEB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-INTERACTION_WEB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BB021702159153DB7870AA /* Pods-INTERACTION_WEB.uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INTERACTION_WEB.uat.xcconfig"; path = "Target Support Files/Pods-INTERACTION_WEB/Pods-INTERACTION_WEB.uat.xcconfig"; sourceTree = "<group>"; };
 		98282F3AB4F1A416E9B37837 /* Pods-INTERACTION_WEB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INTERACTION_WEB.debug.xcconfig"; path = "Target Support Files/Pods-INTERACTION_WEB/Pods-INTERACTION_WEB.debug.xcconfig"; sourceTree = "<group>"; };
-		AFEDB63A624C1C1FE9CB475A /* Pods_INTERACTION_WEB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_INTERACTION_WEB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F96C53C720C903C90E40FCF1 /* Pods_INTERACTION_WEB.framework in Frameworks */,
+				22E3D270DA15B169047EB412 /* libPods-INTERACTION_WEB.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +244,7 @@
 		65559231FB20F6216D3B7687 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AFEDB63A624C1C1FE9CB475A /* Pods_INTERACTION_WEB.framework */,
+				5DF033D1D0B56A24F0364FFF /* libPods-INTERACTION_WEB.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -270,8 +270,9 @@
 				2F892FA72536C71C00DC8217 /* Sources */,
 				2F892FA82536C71C00DC8217 /* Frameworks */,
 				2F892FA92536C71C00DC8217 /* Resources */,
-				58D8F8776BB953E3427FA05E /* [CP] Embed Pods Frameworks */,
 				2F8E334D25B43F4F001BA4CB /* Start Packager */,
+				99BF0A4153170AFCB14D31D9 /* [CP] Copy Pods Resources */,
+				2F5AF11D25B88CCC0015C40B /* Bundle React Native code and images */,
 			);
 			buildRules = (
 			);
@@ -390,6 +391,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F5AF11D25B88CCC0015C40B /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n\n";
+		};
 		2F8E334D25B43F4F001BA4CB /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,24 +424,24 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"yarn start\" > \"${SRCROOT}/../build/build.sh\"\n\n";
+			shellPath = "/bin/sh ";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#echo \"yarn start\" > \"./${SRCROOT}/../build/build.sh\"\n\nexport RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n\n\n";
 		};
-		58D8F8776BB953E3427FA05E /* [CP] Embed Pods Frameworks */ = {
+		99BF0A4153170AFCB14D31D9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-INTERACTION_WEB/Pods-INTERACTION_WEB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-INTERACTION_WEB/Pods-INTERACTION_WEB-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-INTERACTION_WEB/Pods-INTERACTION_WEB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-INTERACTION_WEB/Pods-INTERACTION_WEB-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-INTERACTION_WEB/Pods-INTERACTION_WEB-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-INTERACTION_WEB/Pods-INTERACTION_WEB-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC334DA01FF1986270D18FBC /* [CP] Check Pods Manifest.lock */ = {
@@ -630,6 +649,7 @@
 				CODEPUSH_KEY = "Y0YGc-IlC2rJ9mjKWW8lj75uNFz6xxrLRTnf8";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EA789856JQ;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/INTERACTION_WEB/global/IWPrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -659,6 +679,7 @@
 				CODEPUSH_KEY = G2xHF0BSIDQOsFqzu2Kf0UpNtItCOEWgRYwHS;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EA789856JQ;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/INTERACTION_WEB/global/IWPrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -817,6 +838,7 @@
 				CODEPUSH_KEY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EA789856JQ;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/INTERACTION_WEB/global/IWPrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
