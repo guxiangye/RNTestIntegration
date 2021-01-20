@@ -1,0 +1,90 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do  #指定持续集成对象的平台名称
+  desc "Fastlane 自动化打包"
+  lane :dev do|options|      #给lane命名
+    branch = options[:branch]
+    #这里我们项目为了区分线上环境和测试环境，而做了两个target
+    #关于target区分环境的方法，可以参考我同事的简书文章https://www.jianshu.com/p/23cc84d40423
+    #下面代码通过在终端输入1或者其他数字来选择要打包的target
+    #puts是ruby中的输出，gets为获取终端中输入的文字，gets需要指定STDIN包中的gets方法，否则会识别为其他包中的gets方法，具体为什么我也不知道
+    puts "请选择要打的scheme：（1：INTERACTION_WEB_DEBUG, 2: INTERACTION_WEB_UAT, 3: INTERACTION_WEB_RELEASE）"   
+    scheme = STDIN.gets  
+    # 上传的平台
+    puts "请选择要上传的平台：（1：蒲公英, 2:  fir.im, 3: 仅打包）"   
+    build_type = STDIN.gets  
+    #输入蒲公英上传ipa包后输入的版本描述信息
+    puts "请输入版本描述："
+    desc = STDIN.gets  
+    #  通过判断输入内容，来区分一些打包信息，1后面加\n是因为在终端输入1再敲回车的时候scheme就包含了回车的内容，所以scheme == "1\n"
+    if scheme == "1\n" 
+      #项目中target的名称，以QQ为例，如果我的target叫QQ，则下面填写QQ，如果是wechat，就填wechat
+      schemeName = "INTERACTION_WEB_DEBUG"
+      #打包的用途，也就是app-store, package, ad-hoc, enterprise, development这几个中的一个，这里我们项目的target1用的是公司帐号，打的是开发包
+      export_method = "development" 
+    elsif scheme == "2\n" 
+      schemeName = "INTERACTION_WEB_UAT" 
+      #uat
+      export_method = "development"
+    else
+      schemeName = "INTERACTION_WEB_RELEASE" 
+      #uat
+      export_method = "development"
+    end
+
+    puts "开始打包 #{schemeName}"
+    # 开始打包
+    gym(
+      #指定scheme的名字
+      scheme: "#{schemeName}",
+      #输出的ipa名称
+      output_name:"#{schemeName}",
+      # 是否清空以前的编译信息 true：是
+      clean:true,
+      # 指定打包方式，Release 或者 Debug
+      configuration:"Release",
+      # 指定打包所使用的输出方式，目前支持app-store, package, ad-hoc, enterprise, development
+      export_method:"#{export_method}",
+      # 指定输出文件夹，这里会保存我们最后生成的ipa文件，也就是存到了我们上面提到的fastlane文件夹中的build文件夹中
+      output_directory:"./fastlane/build",
+    )
+
+    # 判断上传方式
+    if build_type == "1\n" 
+      #从蒲公英平台拿到的api_key和user_key，下面我会讲怎么拿到这两个key，存在下面两个变量中
+      api_key = "513c524426bd80b16ac5f7e5f0e6dc36"
+      user_key = "c183c3fcb20cc4514512fe8ebf95f1b3"
+
+      puts "开始上传到蒲公英"
+      #开始上传ipa到蒲公英，这里用的是蒲公英提供的插件
+      #update_description代表更新信息，password代表安装密码
+      pgyer(update_description: "#{desc}", api_key: "#{api_key}", user_key: "#{user_key}", password: "1111", install_type: "2")
+
+    elsif build_type == "2\n" 
+      puts "开始上传到fir.im"
+      # 上传ipa到fir.im服务器，在fir.im获取firim_api_token
+      firim(firim_api_token: "929ca3eb2727213bef1636916fdbafca") # token 在fir 上查看。
+
+    else
+      # 目前什么也不做
+    end
+
+    #在上传完ipa后，打开ipa的存放文件夹，起到提示上传完成的作用
+    system "open ../fastlane/build"
+  end
+end

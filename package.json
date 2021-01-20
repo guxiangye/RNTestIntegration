@@ -1,0 +1,28 @@
+{
+  "name": "RNTestIntegration",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "yarn react-native start"
+  },
+  "dependencies": {
+    "@ant-design/react-native": "^4.0.7",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-community/viewpager": "^2.0.1",
+    "@types/react": "^17.0.0",
+    "@types/react-native": "^0.63.45",
+    "babel-plugin-import": "^1.13.3",
+    "react": "16.13.1",
+    "react-native": "^0.63.4",
+    "react-native-code-push": "^7.0.0",
+    "react-native-gesture-handler": "^1.9.0",
+    "react-native-reanimated": "^1.13.2",
+    "react-native-safe-area-context": "^3.1.9",
+    "react-native-screens": "^2.16.1",
+    "react-native-webview": "^11.0.3",
+    "react-navigation": "^4.4.3",
+    "react-navigation-stack": "^2.10.2",
+    "react-navigation-tabs": "^2.10.1",
+    "typescript": "^3.9.7"
+  }
+}

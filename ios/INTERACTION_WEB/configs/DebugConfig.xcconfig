@@ -1,0 +1,17 @@
+//
+//  DebugConfig.xcconfig
+//  ouyeelf
+//
+//  Created by neil on 2019/6/10.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+//导入公共 config
+#include "CommonConfig.xcconfig"
+//导入pods 对应的 config
+#include "Pods/Target Support Files/Pods-INTERACTION_WEB/Pods-INTERACTION_WEB.debug.xcconfig"
+
+APP_DISPLAY_NAME = 测试助手(开发)
+CONFIG_FLAG = DEBUG

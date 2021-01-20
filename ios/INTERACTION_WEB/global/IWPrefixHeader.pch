@@ -1,0 +1,25 @@
+//
+//  IWPrefixHeader.pch
+//  INTERACTION_WEB
+//
+//  Created by 相晔谷 on 2020/10/14.
+//
+
+#ifndef IWPrefixHeader_pch
+#define IWPrefixHeader_pch
+
+#ifdef __OBJC__
+
+// system
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+// global
+#import "IWMacroDefine.h"
+#import "IWNetworkInterface.h"
+#import "IWConstantManager.h"
+
+#endif
+
+
+#endif
